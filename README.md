@@ -111,27 +111,27 @@ Given this input
 
 ```JSON
     {
-        "custname": "John",
-        "custcity": "Port Angeles",
-        "workingarea": "Washington",
-        "custcountry": "USA",
+        "customerName": "John",
+        "customerCity": "Port Angeles",
+        "workingArea": "Washington",
+        "customerCountry": "USA",
         "grade": "1",
-        "openingamt": 70000,
-        "receiveamt": 7000,
-        "paymentamt": 777,
-        "outstandingamt": 0,
+        "openingAmount": 70000,
+        "receiveAmount": 7000,
+        "paymentAmount": 777,
+        "outstandingAmount": 0,
         "phone": "5555555555",
         "agent": {
-        "agentcode": 8
+        "agentCode": 8
     },
         "orders": [
         {
-            "ordamount": 7777,
-                "advanceamount": 777,
-                "orderdescription": "SOD",
+            "orderAmount": 7777,
+                "advanceAmount": 777,
+                "orderDescription": "SOD",
             "payments" : [
             {
-                "paymentid": 4
+                "paymentId": 4
             }
             ]
         }
@@ -212,21 +212,21 @@ Given this input
 
 ```JSON
     {
-        "custname": "Micheal The Great",
-        "custcity": "Austin",
-        "workingarea": "TEXAS",
-        "custcountry": "TX",
+        "customerName": "Micheal The Great",
+        "customerCity": "Austin",
+        "workingArea": "TEXAS",
+        "customerCountry": "TX",
         "agent": {
-            "agentcode": 11
+            "agentCode": 11
         },
         "orders": [
         {
-            "ordamount": 7777,
-                "advanceamount": 777,
-                "orderdescription": "IT WORKD",
+            "orderAmount": 7777,
+                "advanceAmount": 777,
+                "orderDescription": "IT WORKD",
             "payments" : [
             {
-                "paymentid": 3
+                "paymentId": 3
             }
             ]
         }
@@ -264,16 +264,16 @@ Given this input
 
 ```JSON
 {
-   "ordamount" : 3.21,
-   "advanceamount" : 1.23,
-   "orderdescription" : "My New Order",
+   "orderAmount" : 3.21,
+   "advanceAmount" : 1.23,
+   "orderDescription" : "My New Order",
    "customer":
    {
        "custcode":30
    },
    "payments": [
    {
-       "paymentid": 4
+       "paymentId": 4
    }
    ]
 }
@@ -299,12 +299,12 @@ Given this input
 {
     "payments": [
         {
-            "paymentid": 1
+            "paymentId": 1
         }
     ],
-    "ordamount": 7.77,
-    "advanceamount": 1.23,
-    "orderdescription": "My Revised Order",
+    "orderAmount": 7.77,
+    "advanceAmount": 1.23,
+    "orderDescription": "My Revised Order",
     "customer": {
         "custcode": 17
     }
