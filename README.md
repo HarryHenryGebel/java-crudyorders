@@ -2,17 +2,17 @@
 
 A student that completes this project shows that they can:
 
-* Perform CRUD operations on an RDBMS JPA and Hibernate (Creating and Updating Records)
-* Perform CRUD operations on an RDBMS JPA and Hibernate (Updating certain fields in records)
-* Perform CRUD operations on an RDBMS JPA and Hibernate (Deleting records)
-* Understand and implement @Transactional annotation
+- Perform CRUD operations on an RDBMS JPA and Hibernate (Creating and Updating Records)
+- Perform CRUD operations on an RDBMS JPA and Hibernate (Updating certain fields in records)
+- Perform CRUD operations on an RDBMS JPA and Hibernate (Deleting records)
+- Understand and implement @Transactional annotation
 
 ## Introduction
 
 This is Part 3 of a 3 Part project.
 
-* Part 1 can be found at [java-orders](https://github.com/LambdaSchool/java-orders.git)
-* Part 2 can be found at [java-getorders](https://github.com/LambdaSchool/java-getorders.git)
+- Part 1 can be found at [java-orders](https://github.com/LambdaSchool/java-orders.git)
+- Part 2 can be found at [java-getorders](https://github.com/LambdaSchool/java-getorders.git)
 
 This is a basic database scheme with customers, orders, and sales agents. This Java Spring REST API application will provide endpoints for clients to manipulate various data sets contained in the application's data.
 
@@ -22,54 +22,61 @@ The table layouts are as follows
 
 ![Image of Database Layout](java-orders-db.png)
 
-* AGENTS
-  * AGENTCODE primary key, not null Long
-  * AGENTNAME string
-  * WORKINGAREA string
-  * COMMISSION double
-  * PHONE string
-  * COUNTRY string
+- AGENTS
 
-* CUSTOMERS
-  * CUSTCODE primary key, not null Long
-  * CUSTNAME String, not null
-  * CUSTCITY String
-  * WORKINGAREA String
-  * CUSTCOUNTRY String
-  * GRADE String
-  * OPENINGAMT double
-  * RECEIVEAMT double
-  * PAYMENTAMT double
-  * OUTSTANDINGAMT double
-  * PHONE String
-  * AGENTCODE Long foreign key (one agent to many customers) not null
+  - AGENTCODE primary key, not null Long
+  - AGENTNAME string
+  - WORKINGAREA string
+  - COMMISSION double
+  - PHONE string
+  - COUNTRY string
 
-* ORDERS
-  * ORDNUM primary key, not null Long
-  * ORDAMOUNT double
-  * ADVANCEAMOUNT double
-  * CUSTCODE Long foreign key (one customer to many orders) not null
-  * ORDERDESCRIPTION String
+- CUSTOMERS
 
-* PAYMENTS
-  * PAYMENTID primary key, not null long
-  * TYPE String not null
-  
-* ORDERSPAYMENTS (join table)
-  * ORDERNUM foreign key to ORDERS
-  * PAYMENTID foreign key to PAYMENTS.
+  - CUSTCODE primary key, not null Long
+  - CUSTNAME String, not null
+  - CUSTCITY String
+  - WORKINGAREA String
+  - CUSTCOUNTRY String
+  - GRADE String
+  - OPENINGAMT double
+  - RECEIVEAMT double
+  - PAYMENTAMT double
+  - OUTSTANDINGAMT double
+  - PHONE String
+  - AGENTCODE Long foreign key (one agent to many customers) not null
 
-* Customers has a foreign key to Agents (AGENTCODE) this means:
-  * Customers has a Many to One relationship to Agents and
-  * Agents has a One to Many relationship to Customers
+- ORDERS
 
-* Orders has a foreign key to Customers (CUSTCODE)
-  * Orders has a Many to One relationship to Customers and
-  * Customers has a One to Many relationship to Orders
+  - ORDNUM primary key, not null Long
+  - ORDAMOUNT double
+  - ADVANCEAMOUNT double
+  - CUSTCODE Long foreign key (one customer to many orders) not null
+  - ORDERDESCRIPTION String
 
-* Orders has a many to many relationship with payments
-  * multiple orders can use the same payment type and an order can have multiple payment types.
-  * For example you can use both gift card and credit card to pay for an order.
+- PAYMENTS
+
+  - PAYMENTID primary key, not null long
+  - TYPE String not null
+
+- ORDERSPAYMENTS (join table)
+
+  - ORDERNUM foreign key to ORDERS
+  - PAYMENTID foreign key to PAYMENTS.
+
+- Customers has a foreign key to Agents (AGENTCODE) this means:
+
+  - Customers has a Many to One relationship to Agents and
+  - Agents has a One to Many relationship to Customers
+
+- Orders has a foreign key to Customers (CUSTCODE)
+
+  - Orders has a Many to One relationship to Customers and
+  - Customers has a One to Many relationship to Orders
+
+- Orders has a many to many relationship with payments
+  - multiple orders can use the same payment type and an order can have multiple payment types.
+  - For example you can use both gift card and credit card to pay for an order.
 
 Using the provided seed data, a successful application will return the follow data based on the given endpoint. Expand the section of the endpoint to see the data that is returned. The first set of endpoints that read data were developed for the first part of the project. Your task is to add the second set of endpoints which manipulate the data.
 
@@ -77,23 +84,23 @@ Using the provided seed data, a successful application will return the follow da
 
 ## Instructions
 
-* [ ] Please fork and clone this repository. Copy your solution from part 2 into this repository. Your solution from part 2 is the starting point for part 3. If your part 2 did not reach MVP, please check with your TL group leader about your options. Regularly commit and push your code as appropriate.
+- [ ] Please fork and clone this repository. Copy your solution from part 2 into this repository. Your solution from part 2 is the starting point for part 3. If your part 2 did not reach MVP, please check with your TL group leader about your options. Regularly commit and push your code as appropriate.
 
 Expose the following endpoints
 
-* [ ]  POST /customers/customer - Adds a new customer including any new orders
-* [ ]  PUT /customers/customer/{custcode} - completely replaces the customer record including associated orders with the provided data
-* [ ]  PATCH /customers/customer/{custcode} - updates customers with the new data. Only the new data is to be sent from the frontend client.
-* [ ]  DELETE /customers/customer/{custcode} - Deletes the given customer including any associated orders
+- [ ] POST /customers/customer - Adds a new customer including any new orders
+- [ ] PUT /customers/customer/{custcode} - completely replaces the customer record including associated orders with the provided data
+- [ ] PATCH /customers/customer/{custcode} - updates customers with the new data. Only the new data is to be sent from the frontend client.
+- [ ] DELETE /customers/customer/{custcode} - Deletes the given customer including any associated orders
 
-* [ ]  POST /orders/order - adds a new order to an existing customer
-* [ ]  PUT /orders/order/{ordernum} - completely replaces the given order record
-* [ ]  DELETE /orders/order/{ordername} - deletes the given order
+- [ ] POST /orders/order - adds a new order to an existing customer
+- [ ] PUT /orders/order/{ordernum} - completely replaces the given order record
+- [ ] DELETE /orders/order/{ordername} - deletes the given order
 
 ### Stretch Goal
 
-* [ ] Rename your project and associated packages and files from orders, or what you called your orders, to crudyorders, or what you would like to call your crudyorders project.
-* [ ] DELETE /agents/unassigned/{agentcode} - Deletes an agent if they are not assigned to a customer
+- [ ] Rename your project and associated packages and files from orders, or what you called your orders, to crudyorders, or what you would like to call your crudyorders project.
+- [ ] DELETE /agents/unassigned/{agentcode} - Deletes an agent if they are not assigned to a customer
 
 ### MVP Testing
 
@@ -150,37 +157,37 @@ Given this input
 
 ```JSON
     {
-        "custname": "Mojo",
-        "custcity": "Seattle",
-        "workingarea": "Washington",
-        "custcountry": "USA",
+        "customerName": "Mojo",
+        "customerCity": "Seattle",
+        "workingArea": "Washington",
+        "customerCountry": "USA",
         "grade": "1",
-        "openingamt": 70000,
-        "receiveamt": 7000,
-        "paymentamt": 777,
-        "outstandingamt": 0,
+        "openingAmount": 70000,
+        "receiveAmount": 7000,
+        "paymentAmount": 777,
+        "outstandingAmount": 0,
         "phone": "123456789",
         "agent": {
-        "agentcode": 8
+        "agentCode": 8
     },
         "orders": [
         {
-            "ordamount": 7777,
-                "advanceamount": 777,
-                "orderdescription": "SOD",
+            "orderAmount": 7777,
+                "advanceAmount": 777,
+                "orderDescription": "SOD",
             "payments" : [
             {
-                "paymentid": 4
+                "paymentId": 4
             }
             ]
         },
         {
-            "ordamount": 1234,
-                "advanceamount": 52,
-                "orderdescription": "ANOTHER ORDER",
+            "orderAmount": 1234,
+                "advanceAmount": 52,
+                "orderDescription": "ANOTHER ORDER",
             "payments" : [
             {
-                "paymentid": 4
+                "paymentId": 4
             }
             ]
         }
@@ -320,6 +327,7 @@ Status OK
 Produce this output
 
 ```JSON
+
 ```
 
 </details>
