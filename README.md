@@ -269,7 +269,7 @@ Given this input
    "orderDescription" : "My New Order",
    "customer":
    {
-       "custcode":30
+       "customerCode":30
    },
    "payments": [
    {
@@ -306,7 +306,7 @@ Given this input
     "advanceAmount": 1.23,
     "orderDescription": "My Revised Order",
     "customer": {
-        "custcode": 17
+        "customerCode": 17
     }
 }
 ```
